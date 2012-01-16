@@ -11,7 +11,7 @@ describe "Cyrillic translit" do
         ["Будь-хто", "Budkhto"],
         ["тут/там", "tuttam"],
         ["Привіт", "Pryvit"],
-        ["Прывіт", "Prvit"]
+        ["Прывіт", "Prvit"],
       ].each do |original, translited|
         specify do
           CyrillicTranslit.new(original, 'ua', :clean => true).should == translited
@@ -30,7 +30,7 @@ describe "Cyrillic translit" do
     context 'ua,ru,en'do
       [
         ["ЫІG", "YIG"],
-        ["Прывіт", "Pryvit"]
+        ["Прывіт", "Pryvit"],
       ].each do |original, translited|
         specify do
           CyrillicTranslit.new(original, ['ua','ru','en'], :clean => false).should == translited
@@ -41,7 +41,8 @@ describe "Cyrillic translit" do
     context 'ua,ru,en'do
       [
         ["ЫІG", "YIG"],
-        ["Прывіт", "Pryvit"]
+        ["Прывіт", "Pryvit"],
+        ['тест', 'test']
       ].each do |original, translited|
         specify do
           CyrillicTranslit.new(original, ['ua','ru', 'en'], :clean => true).should == translited
