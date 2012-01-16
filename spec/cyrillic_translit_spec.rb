@@ -50,4 +50,8 @@ describe "Cyrillic translit" do
       end
     end
 
+    it 'should translit' do
+      I18n.locale = :ru
+      I18n.transliterate("ы").should == "y"
+    end
 end

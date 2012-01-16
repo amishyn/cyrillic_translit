@@ -20,9 +20,10 @@ module CyrillicTranslit
         CyrillicTranslit::RU_TABLE[s]
       end
 
-      def ua(s)
+      def uk(s)
         CyrillicTranslit::UA_TABLE[s]
       end
+      alias_method :ua, :uk
 
       def en(s)
         CyrillicTranslit::EN_TABLE[s]
